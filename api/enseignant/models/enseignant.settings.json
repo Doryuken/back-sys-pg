@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enseignants",
+  "info": {
+    "name": "Enseignant"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "regex": "[a-zA-Z]+"
+    },
+    "Prenom": {
+      "type": "string",
+      "unique": false,
+      "required": true,
+      "regex": "[a-zA-Z]+"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "groupes": {
+      "via": "enseignant",
+      "collection": "groupe"
+    },
+    "modules": {
+      "via": "enseignants",
+      "collection": "module",
+      "dominant": true
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

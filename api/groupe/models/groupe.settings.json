@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groupes",
+  "info": {
+    "name": "Groupe"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string",
+      "required": true
+    },
+    "enseignant": {
+      "model": "enseignant",
+      "via": "groupes"
+    },
+    "etudiants": {
+      "via": "groupes",
+      "collection": "etudiant",
+      "dominant": true
+    },
+    "module": {
+      "model": "module"
+    }
+  }
+}

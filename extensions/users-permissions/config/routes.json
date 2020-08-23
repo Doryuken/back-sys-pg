@@ -1,0 +1,9 @@
+{
+    "method": "PUT",
+    "path": "/users/_me",
+    "handler": "User.updateMe",
+    "config": {
+      "policies": [],
+      "prefix": ""
+    }
+ }

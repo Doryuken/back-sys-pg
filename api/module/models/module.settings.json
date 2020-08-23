@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modules",
+  "info": {
+    "name": "Module"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "niveau": {
+      "model": "niveau",
+      "via": "modules"
+    },
+    "enseignants": {
+      "collection": "enseignant",
+      "via": "modules"
+    }
+  }
+}

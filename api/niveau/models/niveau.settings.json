@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "niveaus",
+  "info": {
+    "name": "Niveau"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "modules": {
+      "via": "niveau",
+      "collection": "module"
+    },
+    "etudiants": {
+      "via": "niveau",
+      "collection": "etudiant"
+    }
+  }
+}

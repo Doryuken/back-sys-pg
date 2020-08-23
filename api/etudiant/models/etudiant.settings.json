@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "etudiants",
+  "info": {
+    "name": "Etudiant"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string",
+      "required": true,
+      "regex": "[a-zA-Z]+"
+    },
+    "Prenom": {
+      "type": "string",
+      "required": true,
+      "regex": "[a-zA-Z]+"
+    },
+    "Matricule": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "BirthDate": {
+      "type": "date",
+      "required": true
+    },
+    "niveau": {
+      "model": "niveau",
+      "via": "etudiants"
+    },
+    "groupes": {
+      "collection": "groupe",
+      "via": "etudiants"
+    },
+    "seances": {
+      "collection": "seance",
+      "via": "etudiants",
+      "dominant": true
+    }
+  }
+}

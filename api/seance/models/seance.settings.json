@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seances",
+  "info": {
+    "name": "Seance"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Code": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "maxLength": 10,
+      "regex": "[a-zA-Z0-9]+"
+    },
+    "Status": {
+      "type": "boolean",
+      "required": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    },
+    "etudiants": {
+      "via": "seances",
+      "collection": "etudiant"
+    },
+    "enseignant": {
+      "model": "enseignant"
+    },
+    "module": {
+      "model": "module"
+    },
+    "groupe": {
+      "model": "groupe"
+    }
+  }
+}

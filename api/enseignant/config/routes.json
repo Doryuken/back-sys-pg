@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/enseignants",
+      "handler": "enseignant.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enseignants/count",
+      "handler": "enseignant.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enseignants/:id",
+      "handler": "enseignant.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/enseignants",
+      "handler": "enseignant.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/enseignants/:id",
+      "handler": "enseignant.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/enseignants/:id",
+      "handler": "enseignant.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
